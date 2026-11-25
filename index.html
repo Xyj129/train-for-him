@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>开往大连的 V681 · 我坐你旁边</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#cover">进入</a>
+
+  <!-- ① 双人车票 -->
+  <section class="scene cover" id="cover">
+    <div class="cover-glow" aria-hidden="true"></div>
+    <p class="eyebrow">V681 · 2026.11.26 · 夜车</p>
+
+    <div class="duo-ticket">
+      <div class="duo-head">
+        <span>北京</span>
+        <span class="duo-arrow">→</span>
+        <span>大连</span>
+      </div>
+
+      <div class="duo-seats">
+        <div class="duo-seat">
+          <span class="duo-role">他的座位</span>
+          <b>哥哥</b>
+          <span class="duo-meta">15车01号下铺</span>
+        </div>
+        <div class="duo-seat virtual">
+          <span class="duo-role">陪伴席</span>
+          <b>老婆宝宝</b>
+          <span class="duo-meta">就在你旁边</span>
+        </div>
+      </div>
+
+      <div class="duo-foot">
+        <div><span>发车</span><b>20:10</b></div>
+        <div class="duo-dur">11时41分<em>次日 07:51 到</em></div>
+        <div class="duo-right"><span>到达</span><b>07:51</b></div>
+      </div>
+
+      <p class="duo-note">这一夜你一个人坐车，<br>但我给自己留了个位置。</p>
+    </div>
+
+    <button class="primary-btn" id="boardBtn" type="button">上车，我陪你 →</button>
+    <p class="cover-hint">11 个小时，12 个小格子，到点才能拆。</p>
+  </section>
+
+  <!-- ② 车厢 -->
+  <section class="scene cabin" id="cabin" hidden>
+    <header class="cabin-head">
+      <p class="eyebrow">NIGHT TRAIN · 我坐你旁边</p>
+      <h1>你睡你的，<br>我在这儿。</h1>
+    </header>
+
+    <div class="window" aria-label="车窗外">
+      <div class="window-sky" id="windowSky"></div>
+      <span class="window-glass" aria-hidden="true"></span>
+      <span class="window-note" id="windowNote">窗外 · 夜色</span>
+    </div>
+
+    <div class="seats">
+      <div class="seat mine">
+        <span class="seat-icon" aria-hidden="true">🧍</span>
+        <span class="seat-name">哥哥</span>
+        <span class="seat-sub">15车01号下铺</span>
+      </div>
+      <div class="seat hers" id="herSeat">
+        <span class="seat-icon" aria-hidden="true">👩</span>
+        <span class="seat-name">老婆宝宝</span>
+        <span class="seat-sub" id="herSub">虚拟座位 · 就在你旁边</span>
+        <div class="seat-items" id="seatItems" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <p class="status" id="status" aria-live="polite">已拆 0 / 12</p>
+
+    <ol class="lockers" id="lockers" aria-label="整点小格子"></ol>
+
+    <p class="cabin-tip">到点会自动亮，拆开一格，我座位上就多一样东西。</p>
+  </section>
+
+  <!-- ③ 到站 -->
+  <section class="scene arrive" id="arrive" hidden>
+    <div class="dawn" aria-hidden="true"></div>
+    <p class="eyebrow">07:51 · 大连站</p>
+    <h2 class="arrive-title">这趟车，<br>我陪你坐完了。</h2>
+
+    <div class="sign">
+      <p class="sign-small">出站口——这次不能去接你了，下次一定！</p>
+      <p class="sign-name">哥哥</p>
+      <p class="sign-sub">希望哥哥不要感到孤单，我一直在想念你~</p>
+    </div>
+
+    <p class="arrive-line">剩下的路，换我走向你。</p>
+    <p class="sign-off">你的可爱老婆宝宝<br>2026.11.26 · 在一起第 <b id="daysTogether">61</b> 天</p>
+  </section>
+
+  <!-- 小格子弹层 -->
+  <div class="moment" id="moment" hidden role="dialog" aria-modal="true" aria-labelledby="momentTitle">
+    <div class="moment-card">
+      <button class="moment-close" id="momentClose" type="button" aria-label="合上">×</button>
+      <p class="moment-time" id="momentTime">21:00</p>
+      <p class="moment-title" id="momentTitle">一杯热水</p>
+
+      <div class="voice" id="voice" hidden>
+        <button class="voice-btn" id="voiceBtn" type="button" data-state="play" aria-label="播放语音">
+          <span class="voice-glyph" aria-hidden="true"></span>
+        </button>
+        <div class="voice-body">
+          <div class="voice-track"><i id="voiceBar"></i></div>
+          <p class="voice-meta"><span>老婆宝宝点的歌</span><span id="voiceTime">0:00</span></p>
+        </div>
+      </div>
+      <audio id="voiceAudio" preload="none" aria-hidden="true"></audio>
+
+      <p class="moment-line" id="momentLine"></p>
+      <p class="moment-foot" id="momentFoot"></p>
+      <button class="primary-btn" id="momentOk" type="button">收下</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

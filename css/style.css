@@ -393,7 +393,7 @@ button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparen
   background: linear-gradient(180deg, #1b2338, #121729);
   box-shadow: 0 30px 70px rgba(0, 0, 0, .6);
   text-align: center;
-  animation: pop .38s cubic-bezier(.2, 1.4, .5, 1) both;
+  animation: cardIn .38s cubic-bezier(.2, 1.4, .5, 1) both;
 }
 .moment-close {
   position: absolute; top: .5rem; right: .6rem;
@@ -528,6 +528,10 @@ button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparen
 @keyframes pop {
   0% { opacity: 0; transform: translate(-50%, -50%) scale(.4); }
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes cardIn {
+  0% { opacity: 0; transform: scale(.92); }
+  100% { opacity: 1; transform: scale(1); }
 }
 @keyframes breathe { 0%, 100% { opacity: 1; } 50% { opacity: .62; } }
 @keyframes drift {
